@@ -1,9 +1,9 @@
-#include <stdlib.h>
+#include <stdio.h>
 
 /**
  * main - Entry point
  *
- * Description: print all alphabet letters
+ * Description: print all alphabet letters.
  *
  * Return: Always 0 (success)
 */
