@@ -3,7 +3,7 @@
 /**
  * main - Entry point
  *
- * Description: prints all possible different
+ * Description: print all possible different
  *              combinations of two digits
  *
  * Return: Always 0 (success)
@@ -23,9 +23,9 @@ int main(void)
 			while (digit3 <= 9)
 			{
 				if (digit1 != digit2 &&
-				digit1 < digit2 &&
-				digit2 != digit3 &&
-				digit2 < digit3)
+				    digit1 < digit2 &&
+				    digit2 != digit3 &&
+				    digit2 < digit3)
 				}
 					putchar(digit1 + 48);
 					putchar(digit2 + 48);
