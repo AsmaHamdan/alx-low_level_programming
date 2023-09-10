@@ -26,12 +26,12 @@ int main(void)
 				putchar((fristDigit % 10) + 48);
 				putchar(' ');
 				putchar((seconDigit / 10) + 48);
-				putchar((seconDigit / 10) + 48);
+				putchar((seconDigit % 10) + 48);
 
 				if (fristDigit != 98 || seconDigit != 99)
 				{
 					putchar(',');
-					putchar(',');
+					putchar(' ');
 				}
 
 			}
