@@ -9,7 +9,7 @@
  * Return: Always 0 (success)
 */
 
-int main(void)
+int main()
 {
 	int digit1 = 0;
 	int digit2, digit3;
