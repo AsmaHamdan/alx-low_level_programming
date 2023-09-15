@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * more_number - print 0 - 14 tem times and you
+ * more_numbers - print 0 - 14 tem times and you
  *		can only use _putchar three times
  *
  * Return: Always 0 (success)
