@@ -1,27 +1,38 @@
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
- * main - it all starts here
- * @argc: the number of arguments
- * @argv: array of pointers to arguments
- * Return: Always 0
-*/
-
+ * main - a program that adds positive numbers.
+ * @argc: number of arguments
+ * @argv: array with the arguments
+ *
+ * Return: 0 when given two number, else returns 1.
+ **/
 int main(int argc, char *argv[])
 {
-	int sum = 0;
-	char *c;
+	int i, suma = 0, res = 0;
+	char c[] = "Error", *find_letter;
 
-	while (--argc)
+	if (argc > 1)
 	{
-		for (c = argv[argc]; *c; c++)
-			if (*c < '0' || *c > '9')
+		for (i = 1; i < argc; i++)
+		{
+			find_letter = argv[i];
+			while (*find_letter != 0)
 			{
-				return (printf("Error\n"), 1);
-				sum += atoi(argv[argc]);
+				if (*find_letter < 47 || *find_letter > 57)
+				{
+					printf("%s\n", c);
+					return (1);
+				}
+				find_letter++;
 			}
+			res = atoi(argv[i]);
+			suma += res;
+		}
+		printf("%d\n", suma);
 	}
-	printf("%d\n", sum);
+	else
+		printf("%d\n", 0);
 	return (0);
 }
