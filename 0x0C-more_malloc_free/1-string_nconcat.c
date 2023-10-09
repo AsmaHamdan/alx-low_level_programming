@@ -17,9 +17,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	/* check if the string passed are null */
 	if (s1 == NULL)
-		s1 = "";
+		s1 = '-';
 	if (s2 == NULL)
-		s2 = "";
+		s2 = '-';
 
 	/* compute the length of the strings */
 
