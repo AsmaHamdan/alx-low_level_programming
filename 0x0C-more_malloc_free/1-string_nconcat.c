@@ -17,9 +17,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	/* check if the string passed are null */
 	if (s1 == NULL)
+	{
 		s1 = "";
+	}
 	if (s2 == NULL)
+	{
 		s2 = "";
+	}
 
 	/* compute the lenght of the strings */
 
@@ -37,7 +41,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	/* copy first string into str */
 	for (i = 0; s1[i] != '\0'; i++)
+	{
 		str[i] = s1[i];
+	}
 	/* copy 2nd string into str */
 	for (i = 0; j < n; j++)
 	{
