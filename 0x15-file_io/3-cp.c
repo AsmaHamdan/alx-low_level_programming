@@ -9,9 +9,9 @@
 /**
  * main - program
  * @ac : argument count
- * @av : argumwnt vector 
+ * @av : argumwnt vector
  *
- * Return: 1 on success, -1 on failure 
+ * Return: 1 on success, -1 on failure
  */
 int main(int ac, char **av)
 {
@@ -29,7 +29,7 @@ int main(int ac, char **av)
 		dprintf(STDERR_FILENO, ERR_NOWRITE, av[2]), exit(99);
 
 	while ((a = read(from_fi, buf, READ_BUF_SIZE)) > 0)
-		if (write(to_fi, buf, a) !=a)
+		if (write(to_fi, buf, a) != a)
 			dprintf(STDERR_FILENO, ERR_NOWRITE, av[2]), exit(99);
 	if (a == -1)
 		dprintf(STDERR_FILENO, ERR_NOREAD, av[1]), exit(98);
