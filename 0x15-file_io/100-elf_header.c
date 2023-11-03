@@ -154,7 +154,7 @@ void print_osabi_more(Elf64_Ehdr h)
 }
 
 /**
- * print_ abiversion - prints ELF ABI version
+ * print_ abiversion - prints ELF abiversion
  * @h: the ELF header struct
  *
  */
