@@ -2,7 +2,7 @@
 #include <elf.h>
 
 void print_osabi_more(Elf64_Ehdr h);
- 
+
 
 /**
  * print_magic - prints ELF magic bytes
@@ -15,10 +15,9 @@ void print_magic(Elf64_Ehdr h)
 
 	printf("  Magic:  ");
 	for (i = 0; i < EI_NIDENT; i++)
-	{
 		printf("%2.2x%s", h.e_ident[i], i == EI_NIDENT - 1 ? "\n" : " ");
-	}
 }
+
 /**
  * print_class - prints ELF class
  * @h: the ELF header struct
@@ -93,7 +92,7 @@ void print_version(Elf64_Ehdr h)
 void print_osabi(Elf64_Ehdr h)
 {
 	printf("  OS/ABI:               ");
-	switch (h.e_ident[EI_OS/ABI])
+	switch (h.e_ident[EI_OSABI])
 	{
 		case ELFOSABI_NONE:
 			printf("UNIX - System V");
@@ -116,7 +115,7 @@ void print_osabi(Elf64_Ehdr h)
 		case ELFOSABI_FREEBSD:
 			printf("UNIX -freeBSD");
 			break;
-		case ELFOSABI_TUR64:
+		case ELFOSABI_TRU64:
 			printf("UNIX -TRU64");
 			break;
 		default:
@@ -125,6 +124,7 @@ void print_osabi(Elf64_Ehdr h)
 	}
 	printf("\n");
 }
+
 /**
  * print_osabi_more - prints ELF osabi more
  * @h: the ELF header struct
@@ -150,7 +150,7 @@ void print_osabi_more(Elf64_Ehdr h)
 		default:
 			printf("<unknown: %x>", h.e_ident[EI_OSABI]);
 			break;
-	}
+	}	
 }
 
 /**
