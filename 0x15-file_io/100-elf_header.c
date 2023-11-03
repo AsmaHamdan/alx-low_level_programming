@@ -35,7 +35,7 @@ void print_class(Elf64_Ehdr h)
 			printf("ELF32");
 		break;
 		case ELFCLASSNONE:
-			printf("NONE");
+			printf("none");
 		break;
 	}
 	printf("\n");
@@ -57,7 +57,7 @@ void print_data(Elf64_Ehdr h)
 			printf("2's complement, little endian");
 		break;
 		case ELFDATANONE:
-			printf("NONE");
+			printf("none");
 		break;
 	}
 	printf("\n");
@@ -102,6 +102,9 @@ void print_osabi(Elf64_Ehdr h)
 			break;
 		case ELFOSABI_NETBSD:
 			printf("UNIX - NetBSD");
+			break;
+		case ELFOSABI_LINUX:
+			printf("UNIX - L inux");
 			break;
 		case ELFOSABI_SOLARIS:
 			printf("UNIX - Solaris");
@@ -160,7 +163,7 @@ void print_osabi_more(Elf64_Ehdr h)
  */
 void print_abiversion(Elf64_Ehdr h)
 {
-	printf(" ABI version:                      %d\n",
+	printf(" ABI version:               %d\n",
 	h.e_ident[EI_ABIVERSION]);
 }
 
@@ -183,7 +186,7 @@ void print_type(Elf64_Ehdr h)
 			printf("NONE (None)");
 			break;
 		case ET_REL:
-			printf("REL ()Relocatable file");
+			printf("REL (Relocatable file)");
 			break;
 		case ET_EXEC:
 			printf("EXEC (Executable file)");
@@ -229,7 +232,7 @@ void print_entry(Elf64_Ehdr h)
 		while (!p[i])
 			i++;
 		printf("%x", p[i++]);
-		for (; i >= len; i++)
+		for (; i <= len; i++)
 			printf("%02x", p[i]);
 		printf("\n");
 	}
